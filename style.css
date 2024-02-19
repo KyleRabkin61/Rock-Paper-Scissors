@@ -72,6 +72,18 @@ button:active {
     transition:0.25s;
 }
 
+/* imgs */
+
+.rock-pic {
+    width:19vw;
+}
+.paper-pic {
+    width:19vw;
+}
+.scissors-pic {
+    width:19vw;
+}
+
 /* hr */
 
 hr {
