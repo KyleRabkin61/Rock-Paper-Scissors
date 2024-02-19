@@ -1,0 +1,15 @@
+.playa {
+    background:blue;
+}
+.rps-title {
+    background: red;
+}
+.rps-title-text {
+    word-wrap: break-word;
+}
+.compu {
+    background:green;
+}
+.compu-text {
+    word-wrap: break-word;
+}
