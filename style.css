@@ -1,15 +1,39 @@
+
+/* navbar-scoreboard css */
+
 .playa {
-    background:blue;
+    background: blue;
+    height: 150px;
+}
+.playa-text {
+    word-wrap: break-word;
 }
 .rps-title {
     background: red;
+    height: 150px;
 }
 .rps-title-text {
     word-wrap: break-word;
 }
 .compu {
     background:green;
+    height: 150px;
 }
 .compu-text {
     word-wrap: break-word;
+}
+
+/* button css */
+
+button {
+    width: 23vw;
+    height: 23vw;
+    border: none;
+    background: gray;
+}
+
+/* hr */
+
+hr {
+    opacity:1;
 }
