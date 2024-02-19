@@ -28,7 +28,7 @@
         <div class="row my-sm-4">
             <div class="navbar col-4 col-sm-3 playa">
                 <div class="container-fluid justify-content-center">
-                    <h5 class="text-center text-black playa-text">Player Score<br>#</h5>
+                    <h5 class="text-center text-black playa-text">Player Score:<br><br><span id="pScore">0</span></h5>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     </div>
                 </div>
@@ -42,7 +42,7 @@
             </div>
             <div class="navbar col-4 col-sm-3 compu">
                 <div class="container-fluid justify-content-center">
-                    <h5 class=" text-center text-black compu-text">Computer Score<br>#</h5>
+                    <h5 class=" text-center text-black compu-text">Computer Score:<br><br><span id="cScore">0</span></h5>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     </div>
                 </div>
@@ -57,42 +57,65 @@
 
         <div class="row justify-content-center">
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button class="" id="battle">Rock</button>
+                <button class="" id="battle"><h5>Rock</h5></button>
             </div>
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button class="" id="battle">Paper</button>
+                <button class="" id="battle"><h5>Paper</h5></button>
             </div>
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button class="" id="battle">Scissors</button>
+                <button class="" id="battle"><h5>Scissors</h5></button>
             </div>
         </div>
-        <hr class="border-2">
+
+        <!-- hr -->
+
+        <hr class="border-2 my-4">
+
         <!-- battle -->
+
         <div class="row">
+
+            <!-- player side -->
+
             <div class="col-5">
                 <div class="row">
-                    <div class="col-12"></div>
+                    <div class="col-12">
+                        <h4>Player's Choice</h4>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-12"></div>
+                <div class="row justify-content-center my-3">
+                    <div class="col-12 p-choice"></div>
                 </div>
             </div>
+
+            <!-- vs text -->
+
             <div class="col-2">
-                <h1 class="text-center">Vs.</h1>
+                <h1 class="text-center vs">Vs.</h1>
             </div>
+
+            <!-- computer side -->
+
             <div class="col-5">
                 <div class="row">
-                    <div class="col-12"></div>
+                    <div class="col-12">
+                        <h5 class="text-end">Computer Choice</h5>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-12"></div>
+                <div class="row justify-content-center my-3">
+                    <div class="col-12 c-choice"></div>
                 </div>
             </div>
+        </div>
+
+        <h1 class="text-center text-black my-3">Who will win?</h1>
+
         </div>
     </div>
-    <footer>
 
-        <!-- place footer here -->
+<!-- footer -->
+
+    <footer>
 
     </footer>
 

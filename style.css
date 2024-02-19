@@ -26,8 +26,8 @@
 /* button css */
 
 button {
-    width: 23vw;
-    height: 23vw;
+    width: 20vw;
+    height: 20vw;
     border: none;
     background: gray;
 }
@@ -36,4 +36,26 @@ button {
 
 hr {
     opacity:1;
+}
+
+/* choice boxes */
+
+.vs {
+    position: relative;
+    top:12vw;
+}
+.p-choice {
+    width: 25vw;
+    height: 25vw;
+    border: none;
+    background: gray;
+}
+.c-choice {
+    position: relative;
+    top: 1px;
+    width: 25vw;
+    height: 25vw;
+    border: none;
+    background: gray;
+    margin-bottom:20px;
 }
