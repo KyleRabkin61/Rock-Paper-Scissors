@@ -35,14 +35,15 @@
             </div>
             <div class="navbar col-4 col-sm-6 rps-title">
                 <div class="container-fluid justify-content-center">
-                    <h1 class="text-center text-black rps-title-text">Rock Paper Scissors</h1>
+                    <h1 class="text-center text-white rps-title-text">Rock Paper Scissors</h1>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     </div>
                 </div>
             </div>
             <div class="navbar col-4 col-sm-3 compu">
                 <div class="container-fluid justify-content-center">
-                    <h5 class=" text-center text-black compu-text">Computer Score:<br><br><span id="cScore">0</span></h5>
+                    <h5 class=" text-center text-black compu-text">Computer Score:<br><br><span id="cScore">0</span>
+                    </h5>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     </div>
                 </div>
@@ -57,13 +58,19 @@
 
         <div class="row justify-content-center">
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button class="" id="battle"><h5>Rock</h5></button>
+                <button class="" id="battle">
+                    <h5>Rock</h5>
+                </button>
             </div>
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button class="" id="battle"><h5>Paper</h5></button>
+                <button class="" id="battle">
+                    <h5>Paper</h5>
+                </button>
             </div>
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button class="" id="battle"><h5>Scissors</h5></button>
+                <button class="" id="battle">
+                    <h5>Scissors</h5>
+                </button>
             </div>
         </div>
 
@@ -99,7 +106,7 @@
             <div class="col-5">
                 <div class="row">
                     <div class="col-12">
-                        <h5 class="text-end">Computer Choice</h5>
+                        <h4 class="text-end">Computer Choice</h4>
                     </div>
                 </div>
                 <div class="row justify-content-center my-3">
@@ -108,15 +115,31 @@
             </div>
         </div>
 
-        <h1 class="text-center text-black my-3">Who will win?</h1>
+        <!-- win/lose message -->
 
+        <h1 class="text-center text-black mt-3 mb-5">Who will win?</h1>
+
+        <!-- reset button -->
+
+        <div class="row justify-content-center my-5">
+            <div class="col-3"></div>
+            <div class="col-6 text-center">
+                <button class="reset">
+                    <h3>Reset</h3>
+                </button>
+            </div>
+            <div class="col-3"></div>
         </div>
+
     </div>
+    <!-- footer -->
 
-<!-- footer -->
-
-    <footer>
-
+    <footer class="text-white text-center py-2" id="footer">
+        <div class="container">
+            <h5 class="fw-bold">&copy; 2023 WDPP Level 2</h5>
+            <br>
+            <h5 class="fw-bold">From the mind of the illustrious Kyle Rabkin</h5>
+        </div>
     </footer>
 
     <!-- Bootstrap JavaScript Libraries -->

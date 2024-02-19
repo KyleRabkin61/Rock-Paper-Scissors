@@ -1,22 +1,52 @@
+/* color palette
+
+.first-color { 
+	background: #f4eeff; 
+}
+	
+.second-color { 
+	background: #dcd6f7; 
+}
+
+.third-color { 
+	background: #a6b1e1; 
+}
+
+.fourth-color { 
+	background: #424874; 
+}
+
+*/
+
+/* body */
+
+body {
+    background: #f4eeff;
+}
 
 /* navbar-scoreboard css */
 
 .playa {
-    background: blue;
+    background: #a6b1e1;
     height: 150px;
 }
 .playa-text {
     word-wrap: break-word;
 }
 .rps-title {
-    background: red;
+    background: #424874;
     height: 150px;
 }
 .rps-title-text {
     word-wrap: break-word;
+    transition:0.5s;
+}
+.rps-title-text:hover {
+    transform:scale(1.1);
+    transition:0.5s;
 }
 .compu {
-    background:green;
+    background: #a6b1e1;
     height: 150px;
 }
 .compu-text {
@@ -29,7 +59,17 @@ button {
     width: 20vw;
     height: 20vw;
     border: none;
-    background: gray;
+    background: #a6b1e1;
+    box-shadow: 5px 5px #dcd6f7;
+    transition:0.25s;
+}
+button:hover {
+    box-shadow: 10px 10px #dcd6f7;
+    transition:0.25s;
+}
+button:active {
+    box-shadow:none;
+    transition:0.25s;
 }
 
 /* hr */
@@ -48,14 +88,18 @@ hr {
     width: 25vw;
     height: 25vw;
     border: none;
-    background: gray;
+    background: #a6b1e1;
 }
 .c-choice {
     position: relative;
-    top: 1px;
+    top: 3px;
     width: 25vw;
     height: 25vw;
     border: none;
-    background: gray;
+    background: #a6b1e1;
     margin-bottom:20px;
+}
+footer {
+    background: #424874;
+    height:100px;
 }
