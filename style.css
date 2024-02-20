@@ -20,6 +20,13 @@
 
 /* body */
 
+/* custom font */
+
+@font-face {
+    font-family:'numberFont';
+    src: url();
+}
+
 body {
     background: #f4eeff;
 }
@@ -52,7 +59,9 @@ body {
 .compu-text {
     word-wrap: break-word;
 }
-
+.score {
+    font-family: "numberFont";
+}
 /* button css */
 
 button {
@@ -83,7 +92,6 @@ button:active {
 .scissors-pic {
     width:19vw;
 }
-
 /* hr */
 
 hr {
@@ -114,4 +122,7 @@ hr {
 footer {
     background: #424874;
     height:100px;
+}
+.footer-text {
+    font-size:15px;
 }
