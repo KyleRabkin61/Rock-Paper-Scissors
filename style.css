@@ -23,8 +23,8 @@
 /* custom font */
 
 @font-face {
-    font-family:'numberFont';
-    src: url();
+    font-family:'scoreboardFont';
+    src: url(Ugly\ Byte\ Free\ Trial.ttf);
 }
 
 body {
@@ -38,7 +38,6 @@ body {
     height: 150px;
 }
 .playa-text {
-    word-wrap: break-word;
 }
 .rps-title {
     background: #424874;
@@ -57,10 +56,8 @@ body {
     height: 150px;
 }
 .compu-text {
-    word-wrap: break-word;
 }
 .score {
-    font-family: "numberFont";
 }
 /* button css */
 
