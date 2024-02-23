@@ -1,18 +1,28 @@
-let playerName = prompt('Enter Name of user')
+// username script
 
-if (playerName === null) {
-    prompt('Please enter a valid name')
-}
+let playerName = prompt('Enter username.')
+
+while (playerName === null || playerName === '')[
+    playerName = prompt('Please enter valid username.')
+]
     document.getElementById('userName').innerText = `${playerName}'s`
+    document.getElementById('userNameBattle').innerText = `${playerName}'s`
 
-
+// button script
 
 function rockChoice() {
     document.getElementById('playerDisplayPicture').src = 'imgs/rock.png'
 }
 function paperChoice() {
-    
+    document.getElementById('playerDisplayPicture').src = 'imgs/paper.png'
 }
 function scissorChoice() {
-    
+    document.getElementById('playerDisplayPicture').src = 'imgs/scissors.png'
+}
+
+// reset script
+
+function resetGame() {
+    document.getElementById('playerDisplayPicture').src = 'imgs/question-mark.png'
+    document.getElementById('playerDisplayPicture').src = 'imgs/question-mark.png'
 }

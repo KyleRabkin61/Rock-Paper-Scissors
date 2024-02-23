@@ -38,6 +38,7 @@ body {
     height: 150px;
 }
 .playa-text {
+    overflow: hidden;
 }
 .rps-title {
     background: #424874;
@@ -90,7 +91,7 @@ button:active {
     width:19vw;
 }
 .question-pic {
-    height:19vw;
+    height:20vw;
 
 }
 /* hr */
