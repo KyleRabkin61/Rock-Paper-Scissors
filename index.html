@@ -28,7 +28,7 @@
         <div class="row my-sm-4">
             <div class="navbar col-4 col-sm-3 playa">
                 <div class="container-fluid justify-content-center">
-                    <h5 class="text-center text-black playa-text"><span id="userName">Player</span><br>Score:<br><br><span class="score" id="pScore">0</span></h5>
+                    <h5 class="text-center text-black playa-text"><span id="userName">Player</span><br>Score:<br><br><span class="score" id="playerScore">0</span></h5>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     </div>
                 </div>
@@ -42,7 +42,7 @@
             </div>
             <div class="navbar col-4 col-sm-3 compu">
                 <div class="container-fluid justify-content-center">
-                    <h5 class=" text-center text-black compu-text">Computer's<br>Score:<br><br><span class="score" id="cScore">0</span>
+                    <h5 class=" text-center text-black compu-text">Computer's<br>Score:<br><br><span class="score" id="computerScore">0</span>
                     </h5>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     </div>
@@ -80,7 +80,7 @@
 
         <!-- battle -->
 
-        <h1 class="text-center text-black my-5" id="roundNumber">Round 1</h1>
+        <h1 class="text-center text-black my-5">Round<span id="roundNumber"> 1</span></h1>
 
         <div class="row justify-content-center" id="battle">
 
@@ -89,7 +89,7 @@
             <div class="col-5">
                 <div class="row">
                     <div class="col-12">
-                        <h4><span id="userNameBattle">Player</span> Choice</h4>
+                        <h2><span id="userNameBattle">Player</span><br>Choice</h2>
                     </div>
                 </div>
                 <div class="row justify-content-center my-3">
@@ -110,11 +110,11 @@
             <div class="col-5">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="text-end">Computer Choice</h4>
+                        <h2 class="text-end">Computer<br>Choice</h2>
                     </div>
                 </div>
                 <div class="row justify-content-center my-3">
-                    <div class="col-12 c-choice text-center" id="computerDisplay"><img class="question-pic" src="imgs/question-mark.png" alt="Question Mark"></div>
+                    <div class="col-12 c-choice text-center" id="computerDisplay"><img class="question-pic" id="computerDisplayPicture" src="imgs/question-mark.png" alt="Question Mark"></div>
                 </div>
             </div>
         </div>

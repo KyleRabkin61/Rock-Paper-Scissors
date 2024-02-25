@@ -20,13 +20,6 @@
 
 /* body */
 
-/* custom font */
-
-@font-face {
-    font-family:'scoreboardFont';
-    src: url(Ugly\ Byte\ Free\ Trial.ttf);
-}
-
 body {
     background: #f4eeff;
 }
@@ -56,15 +49,12 @@ body {
     background: #a6b1e1;
     height: 150px;
 }
-.compu-text {
-}
-.score {
-}
+
 /* button css */
 
 button {
-    width: 20vw;
-    height: 20vw;
+    width: 19vw;
+    height: 19vw;
     border: none;
     background: #a6b1e1;
     box-shadow: 5px 5px #dcd6f7;
@@ -82,18 +72,19 @@ button:active {
 /* imgs */
 
 .rock-pic {
-    width:19vw;
+    width:16vw;
 }
 .paper-pic {
-    width:19vw;
+    width:16vw;
 }
 .scissors-pic {
-    width:19vw;
+    width:16vw;
 }
 .question-pic {
-    height:20vw;
+    width:20vw;
 
 }
+
 /* hr */
 
 hr {
@@ -115,8 +106,6 @@ hr {
 }
 .c-choice {
     padding:10px;
-    position: relative;
-    top: 3px;
     width: 25vw;
     height: 25vw;
     border: none;
