@@ -13,6 +13,7 @@ document.getElementById('userNameBattle').innerText = `${playerName}'s`
 
 let playerScore = 0
 let computerScore = 0
+let roundsPlayed = 0
 let roundNumber = 1
 let result = 'Who Will Win?'
 
@@ -47,40 +48,67 @@ function playGame(playerChoice) {
             computerChoice = 'scissors'
             break;
     }
-   console.log(computerChoice)
-    console.log(randomNumber)
 
     // result javascript
+
     if (playerChoice === computerChoice) {
-        result = "It's a tie!"
+        result = ["It's' A Tie!", "No Winner, It's A Tie!"]
         roundNumber++
+        roundsPlayed++
     }
     else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')) {
-        result = 'You Win!'
+        result = ['You Win!', 'You Are Victorious!', 'You Beat The Computer!']
         roundNumber++
         playerScore++
+        roundsPlayed++
     }
-    else {
-        result = 'Computer Wins!'
+    else if ((playerChoice === 'rock' && computerChoice === 'paper') ||
+    (playerChoice === 'paper' && computerChoice === 'scissors') ||
+    (playerChoice === 'scissors' && computerChoice === 'rock')){
+        result = ['Computer Wins!', 'Computer Is Victorious!', 'The Computer Beat You!']
         roundNumber++
         computerScore++
+        roundsPlayed++
     }
-    document.getElementById('result').innerText = `${result}`
+    document.getElementById('result').innerText = `You chose ${playerChoice}, computer chose ${computerChoice}. ${result}`
     document.getElementById('roundNumber').innerText = ` ${roundNumber}`
     document.getElementById('playerScore').innerText = ` ${playerScore}`
     document.getElementById('computerScore').innerText = ` ${computerScore}`
 
 }
 
+    if (roundsPlayed === 5) {
+        document.getElementById('rockButton').classList.toggle('d-none')
+        document.getElementById('paperButton').classList.toggle('d-none')
+        document.getElementById('scissorsButton').classList.toggle('d-none')
+        document.getElementById('whatQuestion').classList.toggle('d-none')
+        document.getElementById('hr').classList.toggle('d-none')
+        document.getElementById('rounds').innerText = 'Game Over!'
+    }
+
 // resetgame function will set everything back to normal, from the round number returning to one, the player/computer scores to 0, the result message to who will win, and the display-choice-pictures back to question marks.
 
 function resetGame() {
+
+    playerScore = 0
+    computerScore = 0
+    roundsPlayed = 0
+    roundNumber = 1
+    result = 'Who Will Win?'
+
+    document.getElementById('rockButton').classList.remove('d-none')
+    document.getElementById('paperButton').classList.remove('d-none')
+    document.getElementById('scissorsButton').classList.remove('d-none')
+    document.getElementById('whatQuestion').classList.remove('d-none')
+    document.getElementById('hr').classList.remove('d-none')
+    document.getElementById('rounds').innerText = 'Round'
     document.getElementById('playerDisplayPicture').src = 'imgs/question-mark.png'
     document.getElementById('computerDisplayPicture').src = 'imgs/question-mark.png'
     document.getElementById('playerScore').innerText = `${playerScore}`
     document.getElementById('computerScore').innerText = `${computerScore}`
     document.getElementById('roundNumber').innerText = ` ${roundNumber}`
-    document.getElementById('winner').textContent = `${result}`
+    document.getElementById('result').textContent = `${result}`
+    
 }

@@ -52,23 +52,23 @@
 
         <!-- choice question -->
 
-        <h1 class="text-center text-black my-5">What is your choice?</h1>
+        <h1 class="text-center text-black my-5" id="whatQuestion">What is your choice?</h1>
 
         <!-- buttons -->
 
         <div class="row justify-content-center">
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button onclick="playGame('rock')" href="#battle">
+                <button id="rockButton" onclick="playGame('rock')" href="#battle">
                     <img src="imgs/rock.png" class="rock-pic" alt="Rock">
                 </button>
             </div>
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button onclick="playGame('paper')" id="battle">
+                <button id="paperButton" onclick="playGame('paper')" id="battle">
                     <img src="imgs/paper.png" class="paper-pic" alt="Paper">
                 </button>
             </div>
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button onclick="playGame('scissors')" id="battle">
+                <button id="scissorsButton" onclick="playGame('scissors')">
                     <img src="imgs/scissors.png" class="scissors-pic" alt="Scissors">
                 </button>
             </div>
@@ -76,11 +76,11 @@
 
         <!-- hr -->
 
-        <hr class="border-2 my-4">
+        <hr class="border-2 my-4" id="hr">
 
         <!-- battle -->
 
-        <h1 class="text-center text-black my-5">Round<span id="roundNumber"> 1</span> </h1>
+        <h1 class="text-center text-black my-5" id = "rounds">Round<span id="roundNumber"> 1</span> </h1>
 
         <div class="row justify-content-center" id="battle">
 
