@@ -31,27 +31,29 @@ function playGame(playerChoice) {
     }
 
     // the computer choice picks a number between 0 and 2 (integer) and depending on what number it chooses, it will get either rock (0), paper (1), or scissors (2). 
-
-    const computerChoice = Math.floor(Math.random() * 3)
-    switch (computerChoice) {
+    let computerChoice
+    let randomNumber = Math.floor(Math.random() * 3)
+    switch (randomNumber) {
         case 0:
             document.getElementById('computerDisplayPicture').src = 'imgs/rock.png'
-            return 'rock'
+            computerChoice = 'rock'
+            break;
         case 1:
             document.getElementById('computerDisplayPicture').src = 'imgs/paper.png'
-            return 'paper'
+            computerChoice = 'paper'
+            break;
         case 2:
             document.getElementById('computerDisplayPicture').src = 'imgs/scissors.png'
-            return 'scissors'
+            computerChoice = 'scissors'
+            break;
     }
+   console.log(computerChoice)
+    console.log(randomNumber)
 
     // result javascript
-    console.log(roundNumber)
     if (playerChoice === computerChoice) {
         result = "It's a tie!"
         roundNumber++
-        console.log(roundNumber)
-            ;
     }
     else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
@@ -59,17 +61,16 @@ function playGame(playerChoice) {
         result = 'You Win!'
         roundNumber++
         playerScore++
-        console.log(roundNumber)
     }
     else {
         result = 'Computer Wins!'
         roundNumber++
         computerScore++
-        console.log(roundNumber)
     }
     document.getElementById('result').innerText = `${result}`
-    console.log(roundNumber)
-    document.getElementById('roundNumber').innerText = `${roundNumber}`
+    document.getElementById('roundNumber').innerText = ` ${roundNumber}`
+    document.getElementById('playerScore').innerText = ` ${playerScore}`
+    document.getElementById('computerScore').innerText = ` ${computerScore}`
 
 }
 
