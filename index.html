@@ -58,17 +58,17 @@
 
         <div class="row justify-content-center">
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button onclick="rockChoice()" href="#battle">
+                <button onclick="playGame('rock')" href="#battle">
                     <img src="imgs/rock.png" class="rock-pic" alt="Rock">
                 </button>
             </div>
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button onclick="paperChoice()" id="battle">
+                <button onclick="playGame('paper')" id="battle">
                     <img src="imgs/paper.png" class="paper-pic" alt="Paper">
                 </button>
             </div>
             <div class="col-6 col-sm-4 text-center mb-5">
-                <button onclick="scissorChoice()" id="battle">
+                <button onclick="playGame('scissors')" id="battle">
                     <img src="imgs/scissors.png" class="scissors-pic" alt="Scissors">
                 </button>
             </div>
@@ -80,7 +80,7 @@
 
         <!-- battle -->
 
-        <h1 class="text-center text-black my-5">Round<span id="roundNumber"> 1</span></h1>
+        <h1 class="text-center text-black my-5">Round<span id="roundNumber"> 1</span></span></h1>
 
         <div class="row justify-content-center" id="battle">
 
@@ -121,7 +121,7 @@
 
         <!-- win/lose message -->
 
-        <h1 class="text-center text-black mt-3 mb-5">Who will win?</h1>
+        <h1 class="text-center text-black mt-3 mb-5" id="winner">Who Will Win?</h1>
 
         <!-- reset button -->
 
