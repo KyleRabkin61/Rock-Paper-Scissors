@@ -5,7 +5,7 @@ let playerName = prompt('Enter username.')
 while (playerName === null || playerName === '') [
     playerName = prompt('Please enter valid username.')
 
-// If the username is invalid, (either empty input or user clicks cancel on the prompt) the prompt will reappear asking for a valid input.
+    // If the username is invalid, (either empty input or user clicks cancel on the prompt) the prompt will reappear asking for a valid input.
 
 ]
 document.getElementById('userName').innerText = `${playerName}'s`
@@ -18,7 +18,7 @@ let result = 'Who Will Win?'
 
 function playGame(playerChoice) {
 
-// establishes what happens if player chooses rock, paper, or scissors.
+    // establishes what happens if player chooses rock, paper, or scissors.
 
     if (playerChoice === 'rock') {
         document.getElementById('playerDisplayPicture').src = 'imgs/rock.png'
@@ -28,9 +28,9 @@ function playGame(playerChoice) {
     }
     else if (playerChoice === 'scissors') {
         document.getElementById('playerDisplayPicture').src = 'imgs/scissors.png'
-    } 
+    }
 
-// the computer choice picks a number between 0 and 2 (integer) and depending on what number it chooses, it will get either rock (0), paper (1), or scissors (2). 
+    // the computer choice picks a number between 0 and 2 (integer) and depending on what number it chooses, it will get either rock (0), paper (1), or scissors (2). 
 
     const computerChoice = Math.floor(Math.random() * 3)
     switch (computerChoice) {
@@ -45,25 +45,30 @@ function playGame(playerChoice) {
             return 'scissors'
     }
 
-// result javascript
-
+    // result javascript
+    console.log(roundNumber)
     if (playerChoice === computerChoice) {
         result = "It's a tie!"
-        roundNumber++;
+        roundNumber++
+        console.log(roundNumber)
+            ;
     }
-    else if ((playerChoice === 'rock' && computerChoice === 'scissors') || 
-    (playerChoice === 'paper' && computerChoice === 'rock') || 
-    (playerChoice === 'scissors' && computerChoice === 'paper')) {
+    else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'paper' && computerChoice === 'rock') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper')) {
         result = 'You Win!'
         roundNumber++
         playerScore++
-    } 
+        console.log(roundNumber)
+    }
     else {
         result = 'Computer Wins!'
         roundNumber++
         computerScore++
+        console.log(roundNumber)
     }
     document.getElementById('result').innerText = `${result}`
+    console.log(roundNumber)
     document.getElementById('roundNumber').innerText = `${roundNumber}`
 
 }
