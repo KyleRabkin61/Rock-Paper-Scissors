@@ -17,6 +17,8 @@ let roundsPlayed = 0
 let roundNumber = 1
 let result = 'Who Will Win?'
 
+document.getElementById('finalResult').classList.toggle('d-none')
+
 function playGame(playerChoice) {
 
     // establishes what happens if player chooses rock, paper, or scissors.
@@ -52,14 +54,14 @@ function playGame(playerChoice) {
     // result javascript
 
     if (playerChoice === computerChoice) {
-        result = ["It's' A Tie!", "No Winner, It's A Tie!"]
+        result = "It's A Tie!"
         roundNumber++
         roundsPlayed++
     }
     else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')) {
-        result = ['You Win!', 'You Are Victorious!', 'You Beat The Computer!']
+        result = 'You Win!'
         roundNumber++
         playerScore++
         roundsPlayed++
@@ -67,7 +69,7 @@ function playGame(playerChoice) {
     else if ((playerChoice === 'rock' && computerChoice === 'paper') ||
     (playerChoice === 'paper' && computerChoice === 'scissors') ||
     (playerChoice === 'scissors' && computerChoice === 'rock')){
-        result = ['Computer Wins!', 'Computer Is Victorious!', 'The Computer Beat You!']
+        result = 'Computer Wins!'
         roundNumber++
         computerScore++
         roundsPlayed++
@@ -77,8 +79,6 @@ function playGame(playerChoice) {
     document.getElementById('playerScore').innerText = ` ${playerScore}`
     document.getElementById('computerScore').innerText = ` ${computerScore}`
 
-}
-
     if (roundsPlayed === 5) {
         document.getElementById('rockButton').classList.toggle('d-none')
         document.getElementById('paperButton').classList.toggle('d-none')
@@ -86,7 +86,22 @@ function playGame(playerChoice) {
         document.getElementById('whatQuestion').classList.toggle('d-none')
         document.getElementById('hr').classList.toggle('d-none')
         document.getElementById('rounds').innerText = 'Game Over!'
+        }
+    if (roundsPlayed === 5 && playerScore > computerScore) {
+        document.getElementById('finalResult').classList.remove('d-none')
+        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the winner is ${playerName}!`
     }
+    else if (roundsPlayed === 5 && playerScore < computerScore) {
+        document.getElementById('finalResult').classList.remove('d-none')
+        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the winner is the computer!`
+    }
+    else if (roundsPlayed === 5 && playerScore === computerScore) {
+        document.getElementById('finalResult').classList.remove('d-none')
+        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the game comes to a tie!`
+    }
+
+}
+    
 
 // resetgame function will set everything back to normal, from the round number returning to one, the player/computer scores to 0, the result message to who will win, and the display-choice-pictures back to question marks.
 
@@ -98,6 +113,7 @@ function resetGame() {
     roundNumber = 1
     result = 'Who Will Win?'
 
+    document.getElementById('finalResult').classList.toggle('d-none')
     document.getElementById('rockButton').classList.remove('d-none')
     document.getElementById('paperButton').classList.remove('d-none')
     document.getElementById('scissorsButton').classList.remove('d-none')
@@ -110,5 +126,4 @@ function resetGame() {
     document.getElementById('computerScore').innerText = `${computerScore}`
     document.getElementById('roundNumber').innerText = ` ${roundNumber}`
     document.getElementById('result').textContent = `${result}`
-    
 }
