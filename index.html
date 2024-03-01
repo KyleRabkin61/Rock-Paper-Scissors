@@ -57,17 +57,17 @@
         <!-- buttons -->
 
         <div class="row justify-content-center">
-            <div class="col-6 col-sm-4 text-center mb-5">
+            <div class="col-6 col-md-4 text-center mb-5">
                 <button id="rockButton" onclick="playGame('rock')" href="#battle">
                     <img src="imgs/rock.png" class="rock-pic" alt="Rock">
                 </button>
             </div>
-            <div class="col-6 col-sm-4 text-center mb-5">
+            <div class="col-6 col-md-4 text-center mb-5">
                 <button id="paperButton" onclick="playGame('paper')" id="battle">
                     <img src="imgs/paper.png" class="paper-pic" alt="Paper">
                 </button>
             </div>
-            <div class="col-6 col-sm-4 text-center mb-5">
+            <div class="col-6 col-md-4 text-center mb-5">
                 <button id="scissorsButton" onclick="playGame('scissors')">
                     <img src="imgs/scissors.png" class="scissors-pic" alt="Scissors">
                 </button>
@@ -80,7 +80,7 @@
 
         <!-- battle -->
 
-        <h1 class="text-center text-black my-5" id = "whatRound"><span id ="rounds">Round</span><span id="roundNumber"> 1</span> </h1>
+        <h1 class="text-center text-black my-5" id = "whatRound"><span id ="rounds"></span><span id="roundNumber"></span> </h1>
 
         <div class="row justify-content-center" id="battle">
 
@@ -159,6 +159,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <script src="script.js"></script>
 
