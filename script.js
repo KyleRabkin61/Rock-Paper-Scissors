@@ -15,10 +15,9 @@ let playerScore = 0
 let computerScore = 0
 let roundsPlayed = 1
 let roundNumber = 1
-let result = 'Who Will Win?'
 
 document.getElementById('finalResult').classList.toggle('d-none')
-document.getElementById('rounds').innerText = 'Round: ';
+document.getElementById('rounds').textContent = 'Round: ';
 document.getElementById('roundNumber').innerText = `${roundNumber}`;
 
 function playGame(playerChoice) {
@@ -104,10 +103,17 @@ function playGame(playerChoice) {
 
     // this script displays what each outcome will look like, whether it is a win, lose, or a tie for the user. for each outcome, the round number increases by one. for a win, the player score will increase by one and for a loss, the computer score will increase by one. for a tie, neither score will increase.
 
+    let winMsgs
+    let loseMsgs
+    let tieMsgs
+
     if (playerChoice === computerChoice) {
-        result = "It's A Tie!"
+        tieMsgs = ["It's A Tie!", "No winner this round!"]
         roundNumber++
         roundsPlayed++
+
+        result = tieMsgs[Math.floor(Math.random() * tieMsgs.length)]
+
     }
     else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
@@ -116,17 +122,21 @@ function playGame(playerChoice) {
         roundNumber++
         playerScore++
         roundsPlayed++
+
+        result = winMsgs[Math.floor(Math.random() * winMsgs.length)]
+
     }
     else if ((playerChoice === 'rock' && computerChoice === 'paper') ||
     (playerChoice === 'paper' && computerChoice === 'scissors') ||
     (playerChoice === 'scissors' && computerChoice === 'rock')){
-        result = 'Computer Wins!'
+        loseMsgs = ['Computer wins!', 'The computer won that round', 'This round goes to the computer']
         roundNumber++
         computerScore++
         roundsPlayed++
-    }
 
-    result = winMsgs[Math.floor(math.random() * winMsgs.length)]
+        result = loseMsgs[Math.floor(Math.random() * loseMsgs.length)]
+
+    }
 
     document.getElementById('result').innerText = `You chose ${playerChoice}, computer chose ${computerChoice}. ${result}`
     document.getElementById('roundNumber').textContent = ` ${roundNumber}`
@@ -142,7 +152,6 @@ function resetGame() {
     computerScore = 0
     roundsPlayed = 1
     roundNumber = 1
-    result = 'Who Will Win?'
 
     document.getElementById('playerScore').innerText = `${playerScore}`;
     document.getElementById('computerScore').innerText = `${computerScore}`;
@@ -155,6 +164,6 @@ function resetGame() {
     document.getElementById('round').classList.add('my-5')
     document.getElementById('playerDisplayPicture').src = 'imgs/question-mark.png';
     document.getElementById('computerDisplayPicture').src = 'imgs/question-mark.png';
-    document.getElementById('result').textContent = `${result}`;
+    document.getElementById('result').textContent = 'Who Will Win?';
     document.getElementById('finalResult').classList.add('d-none');
 }
