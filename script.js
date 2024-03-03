@@ -3,13 +3,16 @@
 let playerName = prompt('Enter username.')
 
 while (playerName === null || playerName === '') [
-    playerName = prompt('Please enter valid username.')
+    playerName = prompt('Please enter valid username.') ]
 
-    // If the username is invalid, (either empty input or user clicks cancel on the prompt) the prompt will reappear asking for a valid input.
+// If the username is invalid, (either empty input or user clicks cancel on the prompt) the prompt will reappear asking for a valid input.
 
-]
 document.getElementById('userName').innerText = `${playerName}'s`
 document.getElementById('userNameBattle').innerText = `${playerName}'s`
+
+let overallWin = ['you are the winner!', 'you are victorious!', 'you beat the computer!']
+let overallLose = ['the computer wins!', 'the winner is the computer!', 'the computer beat you!']
+let overallTie = ['the game comes to a tie!', 'there is no winner this time!']
 
 let playerScore = 0
 let computerScore = 0
@@ -109,7 +112,10 @@ function playGame(playerChoice) {
         
     if (roundsPlayed === 5 && playerScore > computerScore) {
         document.getElementById('finalResult').classList.toggle('d-none')
-        document.getElementById('finalResult').innerText = [`With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the winner is ${playerName}!`]
+
+        overallResult = overallWin[Math.floor(Math.random() * overallWin.length)]
+
+        document.getElementById('finalResult').innerText = [`With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, ${overallResult}`]
         var end = Date.now() + (1 * 1000);
 
         var colors = ['#424874', '#dcd6f7', '#a6b1e1',];
@@ -137,11 +143,18 @@ function playGame(playerChoice) {
     }
     else if (roundsPlayed === 5 && playerScore < computerScore) {
         document.getElementById('finalResult').classList.toggle('d-none')
-        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the winner is the computer!`
+
+        overallResult = overallLose[Math.floor(Math.random() * overallLose.length)]
+
+        document.getElementById('finalResult').
+        innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, ${overallResult}`
     }
     else if (roundsPlayed === 5 && playerScore === computerScore) {
         document.getElementById('finalResult').classList.toggle('d-none')
-        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the game comes to a tie!`
+
+        overallResult = overallTie[Math.floor(Math.random() * overallTie.length)]
+
+        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, ${overallResult}`
     }
 
 }
@@ -152,7 +165,7 @@ function resetGame() {
 
     playerScore = 0
     computerScore = 0
-    roundsPlayed = 1
+    roundsPlayed = 0
     roundNumber = 1
 
     document.getElementById('playerScore').innerText = `${playerScore}`;
