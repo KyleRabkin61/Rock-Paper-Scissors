@@ -13,7 +13,7 @@ document.getElementById('userNameBattle').innerText = `${playerName}'s`
 
 let playerScore = 0
 let computerScore = 0
-let roundsPlayed = 1
+let roundsPlayed = 0
 let roundNumber = 1
 
 document.getElementById('finalResult').classList.toggle('d-none')
@@ -21,54 +21,6 @@ document.getElementById('rounds').textContent = 'Round: ';
 document.getElementById('roundNumber').innerText = `${roundNumber}`;
 
 function playGame(playerChoice) {
-
-    // this script establishes what happens when the rounds the game has gone on for has reached five. when this happens, the game will be over, removing the buttons to play another round, as well as replace the round text with game over. It also establishes a winner/loser/tie depending on the scores. if the player wins, confetti pops out!
-
-    if (roundsPlayed === 5) {
-        document.getElementById('rockButton').classList.toggle('d-none')
-        document.getElementById('paperButton').classList.toggle('d-none')
-        document.getElementById('scissorsButton').classList.toggle('d-none')
-        document.getElementById('whatQuestion').classList.toggle('d-none')
-        document.getElementById('hr').classList.toggle('d-none')
-        document.getElementById('round').innerText = 'Game Over!'
-        document.getElementById('round').classList.remove('my-5')
-        }
-    if (roundsPlayed === 5 && playerScore > computerScore) {
-        document.getElementById('finalResult').classList.toggle('d-none')
-        document.getElementById('finalResult').innerText = [`With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the winner is ${playerName}!`]
-        var end = Date.now() + (1 * 1000);
-
-        var colors = ['#424874', '#dcd6f7', '#a6b1e1',];
-
-        (function frame() {
-        confetti({
-            particleCount: 2,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: colors
-        });
-        confetti({
-            particleCount: 2,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: colors
-        });
-
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
-        }
-        }());
-    }
-    else if (roundsPlayed === 5 && playerScore < computerScore) {
-        document.getElementById('finalResult').classList.toggle('d-none')
-        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the winner is the computer!`
-    }
-    else if (roundsPlayed === 5 && playerScore === computerScore) {
-        document.getElementById('finalResult').classList.toggle('d-none')
-        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the game comes to a tie!`
-    }
 
     // establishes what happens if player chooses rock, paper, or scissors.
 
@@ -142,6 +94,56 @@ function playGame(playerChoice) {
     document.getElementById('roundNumber').textContent = ` ${roundNumber}`
     document.getElementById('playerScore').innerText = ` ${playerScore}`
     document.getElementById('computerScore').innerText = ` ${computerScore}`
+
+    // this script establishes what happens when the rounds the game has gone on for has reached five. when this happens, the game will be over, removing the buttons to play another round, as well as replace the round text with game over. It also establishes a winner/loser/tie depending on the scores. if the player wins, confetti pops out!
+
+    if (roundsPlayed === 5) {
+        document.getElementById('rockButton').classList.toggle('d-none')
+        document.getElementById('paperButton').classList.toggle('d-none')
+        document.getElementById('scissorsButton').classList.toggle('d-none')
+        document.getElementById('whatQuestion').classList.toggle('d-none')
+        document.getElementById('hr').classList.toggle('d-none')
+        document.getElementById('round').innerText = 'Game Over!'
+        document.getElementById('round').classList.remove('my-5')
+        }
+        
+    if (roundsPlayed === 5 && playerScore > computerScore) {
+        document.getElementById('finalResult').classList.toggle('d-none')
+        document.getElementById('finalResult').innerText = [`With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the winner is ${playerName}!`]
+        var end = Date.now() + (1 * 1000);
+
+        var colors = ['#424874', '#dcd6f7', '#a6b1e1',];
+
+        (function frame() {
+        confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors
+        });
+        confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+        }());
+    }
+    else if (roundsPlayed === 5 && playerScore < computerScore) {
+        document.getElementById('finalResult').classList.toggle('d-none')
+        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the winner is the computer!`
+    }
+    else if (roundsPlayed === 5 && playerScore === computerScore) {
+        document.getElementById('finalResult').classList.toggle('d-none')
+        document.getElementById('finalResult').innerText = `With ${playerName}'s score as ${playerScore} and the computer's score as ${computerScore}, the game comes to a tie!`
+    }
+
 }
 
 // resetgame function will reset the game by reseting the scores, placing the buttons back, and the rounds played.
