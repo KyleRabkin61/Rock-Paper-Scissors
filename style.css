@@ -114,8 +114,9 @@ hr {
 }
 footer {
     background: #424874;
-    height:100px;
+    height:140px;
 }
 .footer-text {
     font-size:15px;
+    color:white;
 }

@@ -23,13 +23,16 @@ document.getElementById('roundNumber').innerText = `${roundNumber}`;
 
 function playGame(playerChoice) {
 
+    // this script establishes what happens when the rounds the game has gone on for has reached five. when this happens, the game will be over, removing the buttons to play another round, as well as replace the round text with game over. It also establishes a winner/loser/tie depending on the scores. if the player wins, confetti pops out!
+
     if (roundsPlayed === 5) {
         document.getElementById('rockButton').classList.toggle('d-none')
         document.getElementById('paperButton').classList.toggle('d-none')
         document.getElementById('scissorsButton').classList.toggle('d-none')
         document.getElementById('whatQuestion').classList.toggle('d-none')
         document.getElementById('hr').classList.toggle('d-none')
-        document.getElementById('whatRound').innerText = 'Game Over!'
+        document.getElementById('round').innerText = 'Game Over!'
+        document.getElementById('round').classList.remove('my-5')
         }
     if (roundsPlayed === 5 && playerScore > computerScore) {
         document.getElementById('finalResult').classList.toggle('d-none')
@@ -80,7 +83,7 @@ function playGame(playerChoice) {
         document.getElementById('playerDisplayPicture').src = 'imgs/scissors.png'
     }
 
-    // the computer choice picks a number between 0 and 2 (integer) and depending on what number it chooses, it will get either rock (0), paper (1), or scissors (2). 
+    // the computer choice picks a number between 0 and 2 (integer) and depending on what number it chooses, it will get either rock (0), paper (1), or scissors (2). this will also change the image for the computer choice, depending on what it picks.
 
     let computerChoice 
     let randomNumber = Math.floor(Math.random() * 3)
@@ -99,7 +102,7 @@ function playGame(playerChoice) {
             break;
     }
 
-    // result javascript
+    // this script displays what each outcome will look like, whether it is a win, lose, or a tie for the user. for each outcome, the round number increases by one. for a win, the player score will increase by one and for a loss, the computer score will increase by one. for a tie, neither score will increase.
 
     if (playerChoice === computerChoice) {
         result = "It's A Tie!"
@@ -109,7 +112,7 @@ function playGame(playerChoice) {
     else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')) {
-        result = 'You Win!'
+        winMsgs = ['You won this round!', 'You win!', 'This round goes to you!']
         roundNumber++
         playerScore++
         roundsPlayed++
@@ -122,19 +125,20 @@ function playGame(playerChoice) {
         computerScore++
         roundsPlayed++
     }
+
+    result = winMsgs[Math.floor(math.random() * winMsgs.length)]
+
     document.getElementById('result').innerText = `You chose ${playerChoice}, computer chose ${computerChoice}. ${result}`
     document.getElementById('roundNumber').textContent = ` ${roundNumber}`
     document.getElementById('playerScore').innerText = ` ${playerScore}`
     document.getElementById('computerScore').innerText = ` ${computerScore}`
 }
 
-// resetgame function will refresh the website, starting a new game.
+// resetgame function will reset the game by reseting the scores, placing the buttons back, and the rounds played.
 
 function resetGame() {
 
-window.location.reload();
-
-    /*playerScore = 0
+    playerScore = 0
     computerScore = 0
     roundsPlayed = 1
     roundNumber = 1
@@ -147,11 +151,10 @@ window.location.reload();
     document.getElementById('scissorsButton').classList.remove('d-none');
     document.getElementById('whatQuestion').classList.remove('d-none');
     document.getElementById('hr').classList.remove('d-none');
-    document.getElementById('rounds').innerText = '';
-    document.getElementById('roundNumber').textContent = `${roundNumber}`;
+    document.getElementById('round').innerHTML = `Round <span id="roundNumber">1</span>`;
+    document.getElementById('round').classList.add('my-5')
     document.getElementById('playerDisplayPicture').src = 'imgs/question-mark.png';
     document.getElementById('computerDisplayPicture').src = 'imgs/question-mark.png';
     document.getElementById('result').textContent = `${result}`;
     document.getElementById('finalResult').classList.add('d-none');
-    document.getElementById('whatRound').innerText = ''*/
 }
