@@ -20,6 +20,10 @@
 
     <!-- Google fonts -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Rubik:ital,wght@0,300..900;1,300..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
     <!-- CSS link -->
 
     <link rel="stylesheet" href="style.css">
@@ -58,7 +62,7 @@
 
         <!-- choice question -->
 
-        <h1 class="text-center text-black my-5" id="whatQuestion">What is your choice?</h1>
+        <h1 class="text-center text-black my-5 choice-question" id="whatQuestion">What is your choice?</h1>
 
         <!-- buttons -->
 
@@ -86,7 +90,7 @@
 
         <!-- battle -->
 
-        <h1 class="text-center text-black my-5" id = "round">Round <span id="roundNumber">1</span> </h1>
+        <h1 class="text-center text-black my-5 round" id = "round">Round <span id="roundNumber">1</span> </h1>
 
         <div class="row justify-content-center" id="battle">
 
@@ -95,7 +99,7 @@
             <div class="col-5">
                 <div class="row">
                     <div class="col-12">
-                        <h2><span id="userNameBattle">Player</span><br>Choice</h2>
+                        <h2 class="player-choice"><span id="userNameBattle">Player</span><br>Choice</h2>
                     </div>
                 </div>
                 <div class="row justify-content-center my-3">
@@ -116,7 +120,7 @@
             <div class="col-5">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="text-end">Computer<br>Choice</h2>
+                        <h2 class="text-end computer-choice">Computer<br>Choice</h2>
                     </div>
                 </div>
                 <div class="row justify-content-center my-3">
@@ -127,9 +131,9 @@
 
         <!-- win/lose message -->
 
-        <h1 class="text-center text-black mt-3 mb-5" id="result">Who Will Win?</h1>
+        <h1 class="text-center text-black mt-3 mb-5 result" id="result">Who Will Win?</h1>
 
-        <h1 class="text-center text-black mt-3 mb-5" id="finalResult">Who Will Win?</h1>
+        <h1 class="text-center text-black mt-3 mb-5 final-result" id="finalResult"></h1>
 
         <!-- reset button -->
 

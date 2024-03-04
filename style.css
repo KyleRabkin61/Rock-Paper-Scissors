@@ -32,10 +32,14 @@ body {
 }
 .playa-text {
     overflow: hidden;
+    font-family: "Shadows Into Light", cursive;
+    font-weight:600;
+    font-size:25px;
 }
 .rps-title {
     background: #424874;
     height: 150px;
+    font-family: "Archivo Black", sans-serif;
 }
 .rps-title-text {
     word-wrap: break-word;
@@ -49,6 +53,16 @@ body {
     background: #a6b1e1;
     height: 150px;
 }
+.compu-text {
+    font-family: "Shadows Into Light", cursive;
+    font-weight:600;
+    font-size:25px;
+}
+
+.choice-question {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+}
 
 /* button css */
 
@@ -59,6 +73,8 @@ button {
     background: #a6b1e1;
     box-shadow: 5px 5px #dcd6f7;
     transition:0.25s;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
 }
 button:hover {
     box-shadow: 10px 10px #dcd6f7;
@@ -91,11 +107,35 @@ hr {
     opacity:1;
 }
 
+.round {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+}
+
 /* choice boxes */
+
+.player-choice {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+}
 
 .vs {
     position: relative;
     top:4em;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+}
+.computer-choice {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+}
+.result {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+}
+.final-result {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
 }
 .p-choice {
     padding:10px;
@@ -119,4 +159,5 @@ footer {
 .footer-text {
     font-size:15px;
     color:white;
+    font-family: "Archivo Black", sans-serif;
 }
