@@ -89,12 +89,15 @@ button:active {
 
 .rock-pic {
     width:8em;
+    rotate: -45deg;
 }
 .paper-pic {
     width:8em;
+    rotate: -45deg;
 }
 .scissors-pic {
     width:8em;
+    rotate: -45deg;
 }
 .question-pic {
     width:9em;
@@ -160,4 +163,8 @@ footer {
     font-size:15px;
     color:white;
     font-family: "Archivo Black", sans-serif;
+}
+
+.rotate {
+    rotate: -45deg;
 }

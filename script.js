@@ -29,12 +29,15 @@ function playGame(playerChoice) {
 
     if (playerChoice === 'rock') {
         document.getElementById('playerDisplayPicture').src = 'imgs/rock.png'
+        document.getElementById('playerDisplayPicture').classList.add('rotate')
     }
     else if (playerChoice === 'paper') {
         document.getElementById('playerDisplayPicture').src = 'imgs/paper.png'
+        document.getElementById('playerDisplayPicture').classList.add('rotate')
     }
     else if (playerChoice === 'scissors') {
         document.getElementById('playerDisplayPicture').src = 'imgs/scissors.png'
+        document.getElementById('playerDisplayPicture').classList.add('rotate')
     }
 
     // the computer choice picks a number between 0 and 2 (integer) and depending on what number it chooses, it will get either rock (0), paper (1), or scissors (2). this will also change the image for the computer choice, depending on what it picks.
@@ -44,14 +47,17 @@ function playGame(playerChoice) {
     switch (randomNumber) {
         case 0:
             document.getElementById('computerDisplayPicture').src = 'imgs/rock.png'
+            document.getElementById('computerDisplayPicture').classList.add('rotate')
             computerChoice = 'rock'
             break;
         case 1:
             document.getElementById('computerDisplayPicture').src = 'imgs/paper.png'
+            document.getElementById('computerDisplayPicture').classList.add('rotate')
             computerChoice = 'paper'
             break;
         case 2:
             document.getElementById('computerDisplayPicture').src = 'imgs/scissors.png'
+            document.getElementById('computerDisplayPicture').classList.add('rotate')
             computerChoice = 'scissors'
             break;
     }
